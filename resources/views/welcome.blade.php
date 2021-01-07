@@ -6,6 +6,9 @@
 
         <title>Laravel</title>
 
+        <link rel="stylesheet" href="/css/bootstrap.css">
+        <style src="/js/jquery.js"></style>
+        <style src="/js/bootstrap.js"></style>
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
 

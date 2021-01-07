@@ -1,0 +1,31 @@
+<?php
+
+namespace App\Http\Controllers;
+
+use Illuminate\Http\Request;
+
+class PeriodsController extends Controller
+{
+    //
+    public function __construct(){
+        $this->middleware('atuh');
+    }
+    public function index(){
+
+    }
+    public function create(){
+
+    }
+    public function store(){
+
+    }
+    public function edit(){
+        
+    }
+    public function update(){
+
+    }
+    public function delete(){
+
+    }
+}

@@ -14,9 +14,17 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    if(Auth::guest()){
+        return Redirect::to('/login');
+    }
+    if(Auth::check()){
+        return Redirect::to('/home');
+    }
 });
 
 Auth::routes();
+Route::get('logout',[App\Http\Controllers\Auth\LoginController::class,'logout']);
+
+Route::post('auth/get_zones',[App\Http\Controllers\Auth\RegisterController::class,'get_zones']);
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

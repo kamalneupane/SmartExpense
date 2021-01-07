@@ -1,0 +1,98 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+nav {
+    width: 100%;
+    height: 58px;
+    padding-right: 40px;
+    background: rgb(0, 0, 0);
+}
+nav h2{
+    font-family: 'Roboto', sans-serif;
+    font-size: 24px;
+    line-height: 55px;
+    color: rgb(255, 255, 255);
+    float: left;
+    padding: 0px 0px 0px 100px;
+    text-transform: uppercase;
+}
+nav h2 a:hover{
+    text-decoration: none;
+    color: red !important;
+}
+nav h2 a{
+    color: rgb(255, 255, 255);
+}
+ul li a:hover{
+    /* background: rgb(236, 232, 232); */
+    text-decoration: none;
+    color: red !important;
+}
+
+nav ul{
+    float: left;
+    padding-left: 20px;
+}
+nav ul li{
+    float: left;
+    list-style: none;
+    position: relative;
+}
+nav ul li ul{
+    display: none;
+    position: absolute;
+}
+nav ul li:hover ul{
+    display: block;
+}
+nav ul li a{
+    display: block;
+    padding: 14px 8px;
+    font-size: 16px;
+    color: rgb(255, 255, 255);
+}
+nav ul li form{
+    padding: 14px 10px;
+}
+nav ul li ul{
+    background: rgb(0, 0, 0);
+}
+.care{
+    color: rgb(255, 255, 255);
+}
+#footer{
+    width: 100%;
+    left: 0px;
+    bottom: 0px;
+    padding: 5px 5px;
+    text-align: center;
+    position: fixed;
+    height: 50px;
+    margin-top: -50px;
+    background: rgb(0, 0, 0);
+}
+#footer p{
+    color: white;
+}
+
+/* login and register */
+.register-top-login{
+    margin-top: 100px;
+}
+.register-top{
+    margin-top: 30px;
+}
+.register-container{
+    background-color: rgba(255, 255, 255, 0.8);
+    border: 1px solid #dedede;
+    border-radius: 8px;
+    margin: 0px auto;
+    padding: 30px; 
+}
+.no-padding{
+    padding: 0px;
+}
+/* End of login and register */

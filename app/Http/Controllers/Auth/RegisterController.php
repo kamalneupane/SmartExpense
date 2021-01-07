@@ -8,6 +8,8 @@ use App\Models\User;
 use Illuminate\Foundation\Auth\RegistersUsers;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
+// use Illuminate\Support\Facades\Input;
+use App\Models\CountryZone;
 
 class RegisterController extends Controller
 {
@@ -39,6 +41,7 @@ class RegisterController extends Controller
     public function __construct()
     {
         $this->middleware('guest');
+        $this->countryzone = new CountryZone();
     }
 
     /**
@@ -52,7 +55,11 @@ class RegisterController extends Controller
         return Validator::make($data, [
             'name' => ['required', 'string', 'max:255'],
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
-            'password' => ['required', 'string', 'min:8', 'confirmed'],
+            'password' => ['required', 'string', 'min:4', 'confirmed'],
+            // 'phone'=>['required'],
+            'country'=>['required'],
+            'state'=>['required'],
+            'city'=>['required'],
         ]);
     }
 
@@ -64,10 +71,23 @@ class RegisterController extends Controller
      */
     protected function create(array $data)
     {
+        // dd($data);
         return User::create([
             'name' => $data['name'],
             'email' => $data['email'],
             'password' => Hash::make($data['password']),
+            // 'phone'=>$data['phone'],
+            
+            'country'=>$data['country'],
+            'state'=>$data['state'],
+            'city'=>$data['city'],
+            // 'logo'=>$data['logo'],
         ]);
+    }
+    public function get_zones(){
+        // dd(Input::get('id'));
+        $data['zones'] = $this->countryzone->zones();
+        // dd($data['zones']);
+        return view('auth.zones',$data);
     }
 }
