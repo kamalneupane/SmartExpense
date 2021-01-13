@@ -40,10 +40,10 @@
         </div>
 
         <div class="form-group row">
-            <div class="col-sm-2">
+            <div class="col-sm-1 offset-1 ml-3">
                 <input type="checkbox" name="remember"{{ old('remember') ? 'checked' : '' }}>
             </div>
-            <div class="col-sm-8 offset-2 no-padding margin-style">Remember me</div>
+            <div class="col-sm-4 ml-2 no-padding margin-style">Remember me</div>
         </div>
 
         <div class="form-group">

@@ -100,7 +100,6 @@
                 <label for="city" class="col-sm-2 col-form-label">City:</label>
                 <div class="col-sm-8">
                     <input id="city" type="text" class="form-control" name="city" value="{{ old('city') }}" autocomplete="city">
-
                     @error('city')
                         <span class="help-block">
                             <strong>{{ $message }}</strong>

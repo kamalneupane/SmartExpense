@@ -1,8 +1,15 @@
 <nav>
-    <h2><a href="#">Online Kamal</a></h2>
+    <h2><a href="{{route('home')}}">
+        @if(Auth::user()->company_id!=null)
+            {{Auth::user()->company_name}}
+        @else
+            {{trans('app.companies-title')}}
+        @endif
+
+    </a></h2>
     <ul>
         
-        <li><a href="#">Change Company</a></li>
+        <li><a href="{{route('company.index')}}">Change Company</a></li>
         <li><a href="#">Dept. & Periods</a></li>
         <li><a href="#">Budget</a></li>
         <li><a href="#">Expense Request</a></li>
