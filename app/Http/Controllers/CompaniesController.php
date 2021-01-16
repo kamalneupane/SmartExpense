@@ -53,6 +53,7 @@ class CompaniesController extends Controller
         $user_id = Auth::user()->id;
 
         $company = Input::get('company');
+
         $companyid = base64_decode(urldecode($company));
 
         $cname = $this->companies->find($companyid);
@@ -62,7 +63,9 @@ class CompaniesController extends Controller
         $user->company_id = $companyid;
 
         $user->company_name = $cname->name;
+
         $user->save();
+        
         return redirect()->route('company.index')->with('message','New Compnay '.$cname->name.' is selected');
-        }
+    }
 }

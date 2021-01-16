@@ -10,7 +10,7 @@
     <ul>
         
         <li><a href="{{route('company.index')}}">Change Company</a></li>
-        <li><a href="#">Dept. & Periods</a></li>
+        <li><a href="{{route('categories-periods.index')}}">Dept. & Periods</a></li>
         <li><a href="#">Budget</a></li>
         <li><a href="#">Expense Request</a></li>
         <li><a href="#">Users &nbsp;<i class="fas fa-user"></i></a></li>

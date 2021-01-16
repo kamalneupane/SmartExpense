@@ -2,6 +2,9 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\CompaniesController;
+use App\Http\Controllers\CategoriesPeriodsController;
+use App\Http\Controllers\CategoriesController;
+use App\Http\Controllers\PeriodsController;
 
 /*
 |--------------------------------------------------------------------------
@@ -37,5 +40,23 @@ Route::group(['prefix' =>'/companies'],function(){
     Route::post('/store',[CompaniesController::class,'store'])->name('company.store');
     Route::get('/active/{id}',[CompaniesController::class,'active'])->name('company.active');
     Route::get('/active',[CompaniesController::class,'active'])->name('company.active');
+});
+/*==========Categories-periods Routes======== */
+Route::get('/categories-periods',[CategoriesPeriodsController::class,'index'])->name('categories-periods.index');
 
+/*==========Categories Routes======== */
+Route::group(['prefix' => '/categories'],function(){
+    Route::get('/create',[CategoriesController::class,'create'])->name('category.create');
+    Route::post('/store',[CategoriesController::class,'store'])->name('category.store');
+    Route::get('/edit/{id}',[CategoriesController::class,'edit'])->name('category.edit');
+    Route::post('/update/{id}',[CategoriesController::class,'update'])->name('category.update');
+    Route::get('/delete/{id}',[CategoriesController::class,'delete'])->name('category.delete');
+});
+/*==========Periods Routes======== */
+Route::group(['prefix' => '/periods'],function(){
+    Route::get('/create',[PeriodsController::class,'create'])->name('period.create');
+    Route::post('/store',[PeriodsController::class,'store'])->name('period.store');
+    Route::get('/edit/{id}',[PeriodsController::class,'edit'])->name('period.edit');
+    Route::post('/update/{id}',[PeriodsController::class,'update'])->name('period.update');
+    Route::get('/delete/{id}',[PeriodsController::class,'delete'])->name('period.delete');
 });
