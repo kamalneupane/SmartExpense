@@ -1,7 +1,7 @@
 @extends('layouts.main')
 @section('content')
-    <div class="row">
-        
+    <div class="add-company mt-5">
+    <div class="row">    
         @include('periods.create')
         @include('categories.create-category')
     </div>
@@ -9,6 +9,7 @@
     <div class="row">
         @include('periods.list-period')
         @include('categories.list-category')
+    </div>
     </div>
 @endsection
 @section('script')

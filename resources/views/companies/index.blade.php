@@ -19,16 +19,16 @@
     ?>
     @if(count($companies)>0)    
         @foreach($companies as $company)
-                <?php
-                    $class = (Auth::user()->company_id == $company->id ? "bg-{$colors[$i]}" : "border-{$colors[$i]}");
-                ?>
-                    <a href="{{ route('company.active','company='.urlencode(base64_encode($company->id))) }}" style="text-decoration:none">
-                    <div class="departs-group {{$class}}">
-                        <p>{{$company->name}}</p>
-                    </div>
-                </a>
-            @endforeach
-        @endif
+            <?php
+                $class = (Auth::user()->company_id == $company->id ? "bg-{$colors[$i]}" : "border-{$colors[$i]}");
+            ?>
+            <a href="{{ route('company.active','company='.urlencode(base64_encode($company->id))) }}" style="text-decoration:none">
+                <div class="departs-group {{$class}}">
+                    <p>{{$company->name}}</p>
+                </div>
+            </a>
+        @endforeach
+    @endif
     </div>
 </div>
 </div>

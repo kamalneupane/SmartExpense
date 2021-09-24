@@ -5,6 +5,7 @@ use App\Http\Controllers\CompaniesController;
 use App\Http\Controllers\CategoriesPeriodsController;
 use App\Http\Controllers\CategoriesController;
 use App\Http\Controllers\PeriodsController;
+use App\Http\Controllers\UsersController;
 
 /*
 |--------------------------------------------------------------------------
@@ -59,4 +60,13 @@ Route::group(['prefix' => '/periods'],function(){
     Route::get('/edit/{id}',[PeriodsController::class,'edit'])->name('period.edit');
     Route::post('/update/{id}',[PeriodsController::class,'update'])->name('period.update');
     Route::get('/delete/{id}',[PeriodsController::class,'delete'])->name('period.delete');
+});
+/*==========Users Routes======== */
+Route::group(['prefix' => '/users'],function(){
+    Route::get('/',[UsersController::class,'index'])->name('user.index');
+    Route::get('/create',[UsersController::class,'create'])->name('user.create');
+    Route::post('/store',[UsersController::class,'store'])->name('user.store');
+    Route::get('/edit/{id}',[UsersController::class,'edit'])->name('user.edit');
+    Route::post('/update/{id}',[UsersController::class,'update'])->name('user.update');
+    Route::get('/delete/{id}',[UsersController::class,'delete'])->name('user.delete');
 });

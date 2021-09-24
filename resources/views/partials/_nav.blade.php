@@ -1,11 +1,10 @@
-<nav>
+<nav class="nav sticky-top">
     <h2><a href="{{route('home')}}">
         @if(Auth::user()->company_id!=null)
             {{Auth::user()->company_name}}
         @else
             {{trans('app.companies-title')}}
         @endif
-
     </a></h2>
     <ul>
         
@@ -13,7 +12,7 @@
         <li><a href="{{route('categories-periods.index')}}">Dept. & Periods</a></li>
         <li><a href="#">Budget</a></li>
         <li><a href="#">Expense Request</a></li>
-        <li><a href="#">Users &nbsp;<i class="fas fa-user"></i></a></li>
+        <li><a href="{{route('user.index')}}">Users &nbsp;<i class="fas fa-user"></i></a></li>
         <li><a href="#">Reports &nbsp;<i class="fas fa-eye"></i></a></li>
         <li>
             <form action="#" method="#" role="search" class="form-inline">
